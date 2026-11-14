@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "positions_app": {
+    "job_tracker": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -55,10 +55,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "positions_app:build:production"
+              "buildTarget": "job_tracker:build:production"
             },
             "development": {
-              "buildTarget": "positions_app:build:development"
+              "buildTarget": "job_tracker:build:development"
             }
           },
           "defaultConfiguration": "development"
