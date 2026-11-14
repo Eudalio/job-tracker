@@ -1,59 +1,57 @@
 # Job Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+Web app for browsing job postings and tracking your applications. Three main areas are planned: **Jobs**, **Applications**, and **Dashboard**.
 
-## Development server
+## Stack
 
-To start a local development server, run:
+- Angular 22 (standalone components, routing)
+- SCSS
+- ESLint (`angular-eslint`) + Prettier
 
-```bash
-ng serve
-```
+## Prerequisites
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Node.js 20+
+- npm 10+
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Setup
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+## Development
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Open [http://localhost:4200/](http://localhost:4200/). The app reloads on file changes.
 
-## Running unit tests
+## Scripts
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+| Command                | Description                           |
+| ---------------------- | ------------------------------------- |
+| `npm start`            | Dev server (`ng serve`)               |
+| `npm run build`        | Production build                      |
+| `npm test`             | Unit tests (Vitest)                   |
+| `npm run lint`         | ESLint on `src/**/*.ts` and templates |
+| `npm run format`       | Format with Prettier                  |
+| `npm run format:check` | Check formatting without writing      |
 
-```bash
-ng test
+## Project structure
+
+```
+src/app/
+  core/          # Singleton services, interceptors, app-wide providers
+  shared/        # Reusable UI and utilities
+  features/
+    jobs/        # Job listings (Arbeitnow, filters, table)
+    applications/ # Track applications (forms, CRUD)
+    dashboard/   # Overview by pipeline stage
 ```
 
-## Running end-to-end tests
+Feature screens and layout land in later issues; this repo only establishes the folder layout.
 
-For end-to-end (e2e) testing, run:
+## Additional resources
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular CLI](https://angular.dev/tools/cli)
